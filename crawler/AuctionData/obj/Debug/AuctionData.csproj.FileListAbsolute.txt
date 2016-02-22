@@ -1,0 +1,8 @@
+D:\Projects\Visual Studio\AuctionData\AuctionData\bin\Debug\AuctionData.exe.config
+D:\Projects\Visual Studio\AuctionData\AuctionData\bin\Debug\AuctionData.exe
+D:\Projects\Visual Studio\AuctionData\AuctionData\bin\Debug\AuctionData.pdb
+D:\Projects\Visual Studio\AuctionData\AuctionData\obj\Debug\AuctionData.csprojResolveAssemblyReference.cache
+D:\Projects\Visual Studio\AuctionData\AuctionData\obj\Debug\AuctionData.exe
+D:\Projects\Visual Studio\AuctionData\AuctionData\obj\Debug\AuctionData.pdb
+D:\Projects\Visual Studio\AuctionData\AuctionData\bin\Debug\MySql.Data.dll
+D:\Projects\Visual Studio\AuctionData\AuctionData\bin\Debug\Newtonsoft.Json.dll
