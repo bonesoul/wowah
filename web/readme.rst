@@ -1,70 +1,76 @@
-###################
-What is CodeIgniter
-###################
+## What is WoWAH Project ##
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+WoWAH is a unfinished university programming project where we must use big data somehow. WoWAH is a combination of a C# server
+application and a PHP website. Idea is to get World of Warcraft Auction House data from single Realm, query
+Blizzard API for item informations, store all of it into database and show it on the website in various ways.
 
-*******************
-Release Information
-*******************
+## WOWAH Usage ##
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+You must create a config file with following information:
+```
+# Skips some fatal exits and ignores autoclose
+debug = false
 
-**************************
-Changelog and New Features
-**************************
+# Don't query Blizzard Web Api for new items
+# NOTE: Brokes sql relation rules if they are set.
+$ignoreNewItemQueries = false
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+logToConsole = true
 
-*******************
-Server Requirements
-*******************
+dbhost = "localhost"
+dbport = 3306
+dbuser = ""
+dbpass = ""
+dbname = ""
 
-PHP version 5.4 or newer is recommended.
+### World of Warcraft API Configuration
+apikey = ""
+apiurl = "https://eu.api.battle.net/wow/auction/data/"
 
-It should work on 5.2.4 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
+### Battle.net API Configuration
+itemqueryurl = "http://eu.battle.net/api/wow/item/"
 
-************
-Installation
-************
+### World of Warcraft Realm Configuration
+realm = "Ravencrest"
+realmlocale = "en_GB"
+```
 
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
+Also you must create a database with following structure:
 
-*******
-License
-*******
+```sql
+    CREATE TABLE IF NOT EXISTS `auctions` (
+  `auctionId` int(11) NOT NULL,
+  `itemId` int(11) NOT NULL,
+  `owner` varchar(255) NOT NULL,
+  `realm` varchar(255) NOT NULL,
+  `bid` bigint(20) NOT NULL,
+  `buyout` bigint(20) NOT NULL,
+  `ppu_bid` bigint(20) NOT NULL,
+  `ppu_buyout` bigint(20) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  UNIQUE KEY `auctionId` (`auctionId`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
+    CREATE TABLE IF NOT EXISTS `items` (
+  `itemId` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `class` int(11) NOT NULL,
+  `subClass` int(11) NOT NULL,
+  UNIQUE KEY `itemId` (`itemId`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-*********
-Resources
-*********
+    CREATE TABLE IF NOT EXISTS `pulls` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `unixtime` int(11) NOT NULL,
+  `auctions` int(11) NOT NULL,
+  `newItems` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+    ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=0 ;
 
--  `User Guide <https://codeigniter.com/docs>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community IRC <https://webchat.freenode.net/?channels=%23codeigniter>`_
+    CREATE TABLE IF NOT EXISTS `unknown` (
+  `itemId` int(11) NOT NULL,
+  UNIQUE KEY `itemId` (`itemId`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+```
 
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
-
-***************
-Acknowledgement
-***************
-
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
