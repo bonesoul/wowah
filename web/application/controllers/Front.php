@@ -15,6 +15,6 @@ class Front extends CI_Controller
 
     public function index()
     {
-        echo 'Front ok';
+        $this->load->view('templates/header');
     }
 }
