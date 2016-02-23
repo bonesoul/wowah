@@ -20,16 +20,12 @@ namespace AuctionData.WowAPI
             {
                 using (WebClient wc = new WebClient())
                 {
-                    itemJsonString = wc.DownloadString(Config.GetString("itemqueryurl") + id.ToString());
+                    itemJsonString = wc.DownloadString(Config.GetString("itemqueryurl") + id.ToString() + "?apikey=" + Config.GetString("apikey"));
                 }
             }
             catch (WebException ex)
             {
-                // Some items are not in API (removed or something), lets just warn about 404
-                if (((HttpWebResponse)ex.Response).StatusCode == HttpStatusCode.NotFound)
-                    Logger.Write(LogType.WARNING, "Blizzard API didn't know anything for item " + id.ToString());
-                else
-                    Logger.Write(LogType.ERROR, "Unable to download item " + id.ToString() + " information from battle.net: " + ex.Message);
+                Logger.Write(LogType.ERROR, "Unable to download item " + id.ToString() + " information from battle.net: " + ex.Message);
                 return null;
             }
 
