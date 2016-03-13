@@ -123,3 +123,9 @@
     color: #3b3b3b !important;
 }
 
+canvas {
+    width: 100% !important;
+    max-width: 800px;
+    height: auto !important;
+}
+
