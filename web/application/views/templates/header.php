@@ -19,189 +19,72 @@
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
     <link href="<?php echo site_url(); ?>assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="<?php echo site_url(); ?>assets/css/style.css" rel="stylesheet" type="text/css">
     <link href="<?php echo site_url(); ?>assets/css/font-awesome.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900" rel="stylesheet" type="text/css">
-    <link href="<?php echo site_url(); ?>assets/css/custom.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo site_url(); ?>assets/css/wowah.css" rel="stylesheet" type="text/css">
 
-    <script src="<?php echo site_url(); ?>assets/js/jquery-2.2.0.min.js"></script>
-    <script src="<?php echo site_url(); ?>assets/js/metisMenu.min.js"></script>
-    <script src="<?php echo site_url(); ?>assets/js/custom.js"></script>
-    <script src="<?php echo site_url(); ?>assets/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="<?php echo site_url(); ?>assets/js/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="<?php echo site_url(); ?>assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="<?php echo site_url(); ?>assets/js/Chart.js"></script>
+    <script type="text/javascript" src="//wow.zamimg.com/widgets/power.js"></script>
+    <script>
+        var wowhead_tooltips = {
+            "colorlinks": true,
+            "iconizelinks": true,
+            "renamelinks": true
+        }
+    </script>
 
 
 
 </head>
 <body>
 
-<div id="wrapper">
-    <nav class="top1 navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-
-            <a class="navbar-brand" href="#">WoWAh</a>
+            <a class="navbar-brand" href="#">WowAh</a>
         </div>
-
-        <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-                <a href="#" class="dropdown-togle" data-toggle="dropdown" aria-expanded="false">
-                    <i class="fa fa-sign-in"></i>
-                </a>
-                <ul class="dropdown-menu">
-                    <li class="dropdown-menu-header">
-                        <strong>Login</strong>
-                    </li>
-                    <li class="dropdown-menu-footer text-center">
-                        <a href="#">Login</a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-
-        <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" value="Search..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search...';}">
-        </form>
-
-
-        <div class="navbar-default sidebar" role="navigation">
-            <div class="sidebar-nav navbar-collapse">
-
-                <ul class="nav" id="side-menu">
-
-                    <li>
-                        <a href="#"><i class="fa fa-dashboard fa-fw nav_icon"></i>Front page</a>
-                    </li>
-
-                    <li>
-                        <a href="#"><i class="fa fa-shield fa-fw nav_icon"></i>Items<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="#"><i class="fa fa-armor nav_icon"></i>Consumables<span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li id="not-implemented">
-                                        <a href="#" id="not-implemented">Stuff</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" id="not-implemented">Stuff</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" id="not-implemented">Stuff</a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="#"><i class="fa fa-armor nav_icon"></i>Armor<span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#" id="not-implemented">Stuff</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" id="not-implemented">Stuff</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" id="not-implemented">Stuff</a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="#"><i class="fa fa-armor nav_icon"></i>Weapon<span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#" id="not-implemented">Stuff</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" id="not-implemented">Stuff</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" id="not-implemented">Stuff</a>
-                                    </li>
-                                </ul>
-                            </li>
-
-
-
-                        </ul>
-                    </li>
-
-                </ul>
-
-
-
-            </div>
-        </div>
-    </nav>
-    <div id="page-wrapper">
-        <div class="row2">
-            <div class="graphs">
-
-
-                <div class="col_3">
-                    <div class="col-md-2 widget widget1">
-                        <div class="r3_counter_box">
-                            <i class="pull-left fa fa-gavel icon-rounded"></i>
-                            <div class="stats">
-                                <h5>123456</h5>
-                                <span>Auctions</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-2 widget widget1">
-                        <div class="r3_counter_box">
-                            <i class="pull-left fa fa-shield icon-rounded"></i>
-                            <div class="stats">
-                                <h5>12345</h5>
-                                <span>Items</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-2 widget widget1">
-                        <div class="r3_counter_box">
-                            <i class="pull-left fa fa-question icon-rounded"></i>
-                            <div class="stats">
-                                <h5>1234</h5>
-                                <span>Unknown items</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-2 widget widget1">
-                        <div class="r3_counter_box">
-                            <i class="pull-left fa fa-download icon-rounded"></i>
-                            <div class="stats">
-                                <h5>1234</h5>
-                                <span>AH API Queries</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-2 widget widget1">
-                        <div class="r3_counter_box">
-                            <i class="pull-left fa fa-calendar icon-rounded"></i>
-                            <div class="stats">
-                                <h5>Today 13:37:00</h5>
-                                <span>Last AH API Query</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="clearfix"></div>
-                    
-                </div>
-            </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="<?php echo site_url(); ?>">Front page</a></li>
+                <li><a href="#">asdasd</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+            <form class="navbar-form navbar-right">
+                <input type="text" class="form-control" placeholder="Search...">
+            </form>
         </div>
     </div>
-</div>
+</nav>
 
-</body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li class="panel-heading">Garrison gather</li>
+                <li><a href="<?php echo site_url(); ?>pricedata/herbalism">Herbalism</a></li>
+                <li><a href="<?php echo site_url(); ?>pricedata/mining">Mining</a></li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li><a href="">Nav item</a></li>
+                <li><a href="">Nav item again</a></li>
+                <li><a href="">One more nav</a></li>
+                <li><a href="">Another nav item</a></li>
+                <li><a href="">More navigation</a></li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li><a href="">Nav item again</a></li>
+                <li><a href="">One more nav</a></li>
+                <li><a href="">Another nav item</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-
-</html>
