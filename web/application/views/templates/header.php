@@ -28,7 +28,7 @@
     <script type="text/javascript" src="//wow.zamimg.com/widgets/power.js"></script>
     <script>
         var wowhead_tooltips = {
-    "colorlinks": true,
+            "colorlinks": true,
             "iconizelinks": true,
             "renamelinks": true
         }
