@@ -25,58 +25,60 @@ else
     $lastQuery = gmdate('d.m.y H:i:s T', $lastQuery);
 
 ?>
-
-<div class="col-sm-2">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            Auctions
+<div class="row">
+    <div class="col-sm-2">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Auctions
+            </div>
+            <div class="panel-body">
+                <?php echo $auctionCount; ?> auctions
+            </div>
         </div>
-        <div class="panel-body">
-            <?php echo $auctionCount; ?> auctions
+    </div>
+
+    <div class="col-sm-2">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Different items
+            </div>
+            <div class="panel-body">
+                <?php echo $itemCount; ?> items
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-2">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Unknown items
+            </div>
+            <div class="panel-body">
+                <?php echo $unknownCount; ?> unknown items
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-2">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Queries
+            </div>
+            <div class="panel-body">
+                <?php echo $queryCount; ?> queries
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Last query
+            </div>
+            <div class="panel-body">
+                Last query: <?php echo $lastQuery; ?>
+            </div>
         </div>
     </div>
 </div>
 
-<div class="col-sm-2">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            Different items
-        </div>
-        <div class="panel-body">
-            <?php echo $itemCount; ?> items
-        </div>
-    </div>
-</div>
-
-<div class="col-sm-2">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            Unknown items
-        </div>
-        <div class="panel-body">
-            <?php echo $unknownCount; ?> unknown items
-        </div>
-    </div>
-</div>
-
-<div class="col-sm-2">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            Queries
-        </div>
-        <div class="panel-body">
-            <?php echo $queryCount; ?> queries
-        </div>
-    </div>
-</div>
-
-<div class="col-sm-4">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            Last query
-        </div>
-        <div class="panel-body">
-            Last query: <?php echo $lastQuery; ?>
-        </div>
-    </div>
-</div>
