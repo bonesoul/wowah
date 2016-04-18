@@ -24,7 +24,7 @@
 
     <script type="text/javascript" src="<?php echo site_url(); ?>assets/js/jquery-2.2.0.min.js"></script>
     <script type="text/javascript" src="<?php echo site_url(); ?>assets/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="<?php echo site_url(); ?>assets/js/Chart.js"></script>
+    <script type="text/javascript" src="<?php echo site_url(); ?>assets/js/chart.js"></script>
     <script type="text/javascript" src="//wow.zamimg.com/widgets/power.js"></script>
     <script>
         var wowhead_tooltips = {
