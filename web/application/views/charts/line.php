@@ -14,10 +14,6 @@ $rnd = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQ
 
 <div class row>
     <div class="col-lg-12">
-        <h3 class="title">
-            <?php echo $title; ?>
-        </h3>
-
         <canvas id="<?php echo $rnd; ?>" height="300" width="550">
             Your browser doesn't support canvas.
         </canvas>
@@ -27,7 +23,7 @@ $rnd = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQ
 <script>
 
     // We need to change basic integer to WoW currency: coppers, silvers and golds
-    Chart.numberWithCommas = function(x) {
+    Chart.wowCurrency = function(x) {
         var final = "";
         var old = x.toString();
 
@@ -79,10 +75,21 @@ $rnd = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQ
         showTooltips: false,
         animation: true,
         maintainAspectRatio: false,
-        scaleLabel: "<%=Chart.numberWithCommas(value)%>"
+        scaleLabel: "<%=Chart.wowCurrency(value)%>",
+    };
+
+    var options2 = {
+        type: "line",
+        responsive: true,
+        showTooltips: false,
+        animation: true,
+        maintainAspectRatio: false,
+        scaleLabel: "<%=Chart.wowCurrency(value)%>",
+        data: data,
     };
 
     // Render chart
-    var myLineChart = new Chart(ctx).Line(data, options);
+    //var myLineChart = new Chart(ctx).Line(data, options);
+    var myLineChart = new Chart(ctx, options2);
 
 </script>
