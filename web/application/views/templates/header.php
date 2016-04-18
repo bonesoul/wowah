@@ -51,11 +51,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Ravencrest</a>
+                <a class="navbar-brand" href="<?php echo site_url(); ?>">Ravencrest</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="#">Front</a></li>
+                    <li><a href="<?php echo site_url(); ?>">Front</a></li>
                     <li><a href="#">Placeholder</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Herbalism <span class="caret"></span></a>
