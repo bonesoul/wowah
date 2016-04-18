@@ -58,8 +58,6 @@
                 <ul class="nav navbar-nav">
                     <li><a href="<?php echo site_url(); ?>">Front</a></li>
 
-                    <li><a href="#">Placeholder</a></li>
-
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Professions<span class="caret"></span></a>
                         <ul class="dropdown-menu">
